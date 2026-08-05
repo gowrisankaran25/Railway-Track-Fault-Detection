@@ -33,6 +33,12 @@ The Dashboard has undergone significant UI polishing to ensure a premium, access
 - **Settings & Archive Polishing**: Improved `Select` dropdown visibility, fixed `Tabs` active states, added distinct placeholder colors (`rgba(255, 255, 255, 0.4)`), and updated the `Trash2` ghost buttons to blend beautifully with the dark aesthetic.
 - **Build Optimization**: Removed unused, 0-byte placeholder files to prevent Vite build errors.
 
+## 🔑 Demo Access
+
+Since the dashboard uses a mock authentication system for demonstration purposes, you can log in using any credentials. For example:
+- **Email**: `admin@railway.gov.in` (or any email)
+- **Password**: `admin123` (or any password)
+
 ## ⚙️ Getting Started
 
 ### Running the Dashboard
