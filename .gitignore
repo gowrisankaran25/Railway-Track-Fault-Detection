@@ -1,0 +1,21 @@
+# Node / frontend dependencies
+node_modules/
+**/node_modules/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environment and secrets
+.env
+.env.*
+
+# Uploads and generated runtime files
+uploads/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

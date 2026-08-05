@@ -1,0 +1,48 @@
+{
+  "name": "Railway Track Fault Detection",
+  "short_name": "Railway RCC",
+  "description": "Intelligent Railway Track Fault & Obstruction Detection System",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "productivity"],
+  "shortcuts": [
+    {
+      "name": "Live Map",
+      "short_name": "Map",
+      "description": "View live fault detection map",
+      "url": "/",
+      "icons": [{"src": "/icon-192x192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Inspectors",
+      "short_name": "Inspectors",
+      "description": "Manage inspector assignments",
+      "url": "/inspectors",
+      "icons": [{"src": "/icon-192x192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Drones",
+      "short_name": "Drones",
+      "description": "Control drone fleet",
+      "url": "/drones",
+      "icons": [{"src": "/icon-192x192.png", "sizes": "192x192"}]
+    }
+  ]
+}
