@@ -96,13 +96,16 @@ export default function CollaborationPanel() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <CardTitle style={{ fontSize: '1rem', margin: 0 }}>Team Collaboration</CardTitle>
                   <div style={{ display: 'flex', gap: '8px' }}>
-                    <Button variant="ghost" size="icon">
+                    <Button variant="ghost" size="icon" onClick={() => toast.success('Initiating secure video call...')}>
                       <Video size={16} />
                     </Button>
-                    <Button variant="ghost" size="icon">
+                    <Button variant="ghost" size="icon" onClick={() => toast.success('Starting audio conference...')}>
                       <Phone size={16} />
                     </Button>
-                    <Button variant="ghost" size="icon">
+                    <Button variant="ghost" size="icon" onClick={() => {
+                      navigator.clipboard.writeText(window.location.href);
+                      toast.success('Collaboration link copied to clipboard!');
+                    }}>
                       <Share2 size={16} />
                     </Button>
                   </div>
