@@ -2,17 +2,124 @@
 node_modules/
 **/node_modules/
 
-# Python caches
+# Frontend build artifacts
+build/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Python caches and compiled files
 __pycache__/
 *.py[cod]
+*.py[codz]
 *.pyo
 *.pyd
+*$py.class
 
-# Environment and secrets
+# Packaging and build output
+.Python
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Test and coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py.cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Virtual environments and secrets
 .env
 .env.*
+.envrc
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.pdm-python
+.pdm-build/
+.pixi
 
-# Uploads and generated runtime files
+# Jupyter and IPython
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# Django / Flask / Scrapy / Sphinx / PyBuilder
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+instance/
+.webassets-cache
+.scrapy
+docs/_build/
+.pybuilder/
+target/
+
+# Misc Python tooling
+__pypackages__/
+celerybeat-schedule
+celerybeat.pid
+*.rdb
+*.aof
+*.pid
+mnesia/
+rabbitmq/
+rabbitmq-data/
+activemq-data/
+*.sage.py
+.spyderproject
+.spyproject
+.ropeproject
+/site
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+cython_debug/
+
+# JetBrains / editor and temp files
+.idea/
+.vscode/
+tempCodeRunnerFile.py
+.ruff_cache/
+.pypirc
+marimo/_static/
+marimo/_lsp/
+__marimo__/
+.streamlit/secrets.toml
+
+# Uploaded assets and runtime logs
 uploads/
 *.log
 
