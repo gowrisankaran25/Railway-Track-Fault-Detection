@@ -29,9 +29,9 @@ export default function DataExport() {
   const [dateRange, setDateRange] = useState('7d');
   const [isExporting, setIsExporting] = useState(false);
   const [exportHistory, setExportHistory] = useState([
-    { id: 1, name: 'Daily Summary', format: 'pdf', date: '2024-01-15 10:30', status: 'completed' },
-    { id: 2, name: 'Weekly Analysis', format: 'excel', date: '2024-01-14 15:45', status: 'completed' },
-    { id: 3, name: 'SLA Compliance', format: 'pdf', date: '2024-01-13 09:20', status: 'failed' }
+    { id: 1, name: 'Daily Summary', format: 'pdf', date: '2026-01-15 10:30', status: 'completed' },
+    { id: 2, name: 'Weekly Analysis', format: 'excel', date: '2026-01-14 15:45', status: 'completed' },
+    { id: 3, name: 'SLA Compliance', format: 'pdf', date: '2026-01-13 09:20', status: 'failed' }
   ]);
 
   const handleExport = () => {

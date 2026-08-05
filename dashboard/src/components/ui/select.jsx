@@ -16,7 +16,7 @@ const Select = React.forwardRef(({ className, children, style, ...props }, ref) 
 Select.displayName = "Select"
 
 const SelectItem = React.forwardRef(({ className, children, ...props }, ref) => (
-  <option ref={ref} className={cn(className)} {...props}>
+  <option ref={ref} className={cn(className)} style={{ background: 'var(--bg-dark)', color: 'var(--text-primary)' }} {...props}>
     {children}
   </option>
 ))

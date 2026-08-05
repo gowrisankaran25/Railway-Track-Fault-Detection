@@ -76,8 +76,8 @@ const mockInspectors = [
 ];
 
 const mockCriticalFaults = [
-  { id: 'FLT-001', type: 'Crack', location: { lat: 28.6400, lng: 77.1600 }, severity: 'critical', detectedAt: '2024-01-15 10:30' },
-  { id: 'FLT-002', type: 'Misalignment', location: { lat: 28.6650, lng: 77.1400 }, severity: 'critical', detectedAt: '2024-01-15 11:15' },
+  { id: 'FLT-001', type: 'Crack', location: { lat: 28.6400, lng: 77.1600 }, severity: 'critical', detectedAt: '2026-01-15 10:30' },
+  { id: 'FLT-002', type: 'Misalignment', location: { lat: 28.6650, lng: 77.1400 }, severity: 'critical', detectedAt: '2026-01-15 11:15' },
 ];
 
 export default function Inspectors() {

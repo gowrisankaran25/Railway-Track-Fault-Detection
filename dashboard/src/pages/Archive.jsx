@@ -4,26 +4,26 @@ import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 // import { Badge } from '../components/ui/badge';
 import { Select, SelectItem } from '../components/ui/select';
-import { Archive as ArchiveIcon, Search, Calendar, Filter, Download, Eye, Trash2, FolderOpen, FileText } from 'lucide-react';
+import { Archive as ArchiveIcon, Search, Calendar, Filter, Download, Eye, Trash2, FolderOpen, FileText, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
 
 const mockArchives = [
   { 
     id: 'ARC-001', 
-    name: 'January 2024 Fault Reports', 
+    name: 'January 2026 Fault Reports', 
     type: 'fault_reports', 
-    date: '2024-01-31', 
+    date: '2026-01-31', 
     size: '245 MB', 
     records: 1523, 
     status: 'archived',
-    description: 'Complete fault detection data for January 2024'
+    description: 'Complete fault detection data for January 2026'
   },
   { 
     id: 'ARC-002', 
-    name: 'Q4 2023 Drone Logs', 
+    name: 'Q4 2025 Drone Logs', 
     type: 'drone_logs', 
-    date: '2023-12-31', 
+    date: '2025-12-31', 
     size: '1.2 GB', 
     records: 45678, 
     status: 'archived',
@@ -31,9 +31,9 @@ const mockArchives = [
   },
   { 
     id: 'ARC-003', 
-    name: 'December 2023 Maintenance Records', 
+    name: 'December 2025 Maintenance Records', 
     type: 'maintenance', 
-    date: '2023-12-31', 
+    date: '2025-12-31', 
     size: '89 MB', 
     records: 234, 
     status: 'archived',
@@ -41,9 +41,9 @@ const mockArchives = [
   },
   { 
     id: 'ARC-004', 
-    name: 'November 2023 Inspector Reports', 
+    name: 'November 2025 Inspector Reports', 
     type: 'inspector_reports', 
-    date: '2023-11-30', 
+    date: '2025-11-30', 
     size: '156 MB', 
     records: 890, 
     status: 'archived',
@@ -51,9 +51,9 @@ const mockArchives = [
   },
   { 
     id: 'ARC-005', 
-    name: 'Q3 2023 Weather Data', 
+    name: 'Q3 2025 Weather Data', 
     type: 'weather', 
-    date: '2023-09-30', 
+    date: '2025-09-30', 
     size: '45 MB', 
     records: 2190, 
     status: 'archived',
@@ -147,9 +147,9 @@ export default function ArchivePage() {
           </Select>
           <Select value={dateFilter} onChange={(e) => setDateFilter(e.target.value)}>
             <SelectItem value="all">All Time</SelectItem>
+            <SelectItem value="2026">2026</SelectItem>
+            <SelectItem value="2025">2025</SelectItem>
             <SelectItem value="2024">2024</SelectItem>
-            <SelectItem value="2023">2023</SelectItem>
-            <SelectItem value="2022">2022</SelectItem>
           </Select>
           <Button variant="outline">
             <Filter size={18} style={{ marginRight: '8px' }} /> Advanced Filters
@@ -283,6 +283,62 @@ export default function ArchivePage() {
           <Archive size={64} style={{ opacity: 0.3, marginBottom: '16px' }} />
           <p style={{ fontSize: '1.1rem' }}>No archives found</p>
           <p style={{ fontSize: '0.9rem' }}>Try adjusting your search or filters</p>
+        </div>
+      )}
+
+      {/* Archive View Modal */}
+      {selectedArchive && (
+        <div style={{
+          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+          background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(4px)',
+          zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center',
+          padding: '20px'
+        }}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            style={{ width: '100%', maxWidth: '600px' }}
+          >
+            <Card className="glass-panel" style={{ background: 'var(--bg-card)' }}>
+              <CardHeader style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid var(--border)' }}>
+                <div>
+                  <CardTitle>{selectedArchive.name}</CardTitle>
+                  <CardDescription>{selectedArchive.id} • {selectedArchive.date}</CardDescription>
+                </div>
+                <Button variant="ghost" onClick={() => setSelectedArchive(null)} style={{ padding: '8px' }}>
+                  <X size={20} />
+                </Button>
+              </CardHeader>
+              <CardContent style={{ padding: '24px' }}>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: '24px' }}>{selectedArchive.description}</p>
+                
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' }}>
+                  <div style={{ background: 'rgba(0,0,0,0.2)', padding: '16px', borderRadius: '8px' }}>
+                    <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '4px' }}>Total Records</div>
+                    <div style={{ fontSize: '1.25rem', fontWeight: '600', color: 'var(--text-primary)' }}>{selectedArchive.records.toLocaleString()}</div>
+                  </div>
+                  <div style={{ background: 'rgba(0,0,0,0.2)', padding: '16px', borderRadius: '8px' }}>
+                    <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '4px' }}>File Size</div>
+                    <div style={{ fontSize: '1.25rem', fontWeight: '600', color: 'var(--text-primary)' }}>{selectedArchive.size}</div>
+                  </div>
+                </div>
+
+                <div style={{ background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.2)', padding: '16px', borderRadius: '8px', color: '#10b981', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <FileText size={24} />
+                  <div>
+                    <div style={{ fontWeight: '600' }}>Dataset Ready</div>
+                    <div style={{ fontSize: '0.85rem', opacity: 0.8 }}>The archive has been verified and is ready for download or analysis.</div>
+                  </div>
+                </div>
+              </CardContent>
+              <div style={{ padding: '16px 24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'flex-end', gap: '12px' }}>
+                <Button variant="outline" onClick={() => setSelectedArchive(null)}>Close</Button>
+                <Button onClick={() => handleDownload(selectedArchive)}>
+                  <Download size={16} style={{ marginRight: '8px' }} /> Download Archive
+                </Button>
+              </div>
+            </Card>
+          </motion.div>
         </div>
       )}
     </div>
